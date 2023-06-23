@@ -57,7 +57,6 @@ const getAllMeals = async (req, res) => {
 
     else if ('limit' in hasQuery) {
       const limitedNumber = hasQuery.limit;
-      console.log(limitedNumber)
       const limitedMeals = await knex("meal")
         .limit(limitedNumber);
         res.status(200).json(limitedMeals);
@@ -81,6 +80,15 @@ const getAllMeals = async (req, res) => {
 
       res.status(200).json(sortedMeals)
     }
+
+    // else if (req.params.id && req.params[0]) {
+    //   const mealId = req.params.id;
+    //   const mealReviews = await knex("review")
+    //   .select("*");
+    //   console.log(req.params)
+    //   res.status(200).json(mealReviews);
+    // }
+
 
     else {
       const allMeals = await knex("meal").select("title", "price");
@@ -138,7 +146,7 @@ const updateMealById = async (req, res) => {
       price: req.body.price,
       created_date: req.body.created_date,
     });
-
+    
     result.length === 0
       ? res.status(404).json("Oops! the meal does not exist")
       : res.status(200).json("The meal updated successfully.");

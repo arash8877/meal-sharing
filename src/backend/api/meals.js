@@ -1,24 +1,32 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("../database");
-const { getAllMeals, addMeal, getMealById, updateMealById, deleteMealById} = require("../controllers/mealsController")
+const {
+  getAllMeals,
+  addMeal,
+  getMealById,
+  updateMealById,
+  deleteMealById,
+  getCheapMeals,
+} = require("../controllers/mealsController");
 
-
-router.get("/", async (request, response) => {
-  try {
-    // knex syntax for selecting things. Look up the documentation for knex for further info
-    const titles = await knex("meal").select("title");
-    response.json(titles);
-  } catch (error) {
-    throw error;
-  }
-});
+// router.get("/", async (request, response) => {
+//   try {
+//     // knex syntax for selecting things. Look up the documentation for knex for further info
+//     const titles = await knex("meal").select("title");
+//     response.json(titles);
+//   } catch (error) {
+//     throw error;
+//   }
+// });
 
 //Respond with all meals in the future (relative to the when datetime)
 router.get("/future-meals", async (req, res) => {
   try {
-    const futureMeals = await knex.raw("SELECT * FROM `meal` WHERE `when` > now()");
-    console.log(futureMeals)
+    const futureMeals = await knex.raw(
+      "SELECT * FROM `meal` WHERE `when` > now()"
+    );
+    console.log(futureMeals);
     res.status(200).json(futureMeals[0]);
   } catch (error) {
     res.status(500).json(error);
@@ -76,29 +84,22 @@ router.get("/last-meal", async (req, res) => {
   }
 });
 
-
 //---------- nodejs-week2----------
 
 // Returns all meals
-router.get("/", getAllMeals)
+router.get("/", getAllMeals);
 
 // Adds a new meal to the database
-router.post("/", addMeal)
+router.post("/", addMeal);
 
 // Returns the meal by id
-router.get("/:id", getMealById)
+router.get("/:id", getMealById);
 
 // Updates the meal by id
-router.put("/:id", updateMealById)
+router.put("/:id", updateMealById);
 
 // Deletes the meal by id
-router.delete("/:id", deleteMealById)
-
-
-
-
-
-
+router.delete("/:id", deleteMealById);
 
 
 module.exports = router;

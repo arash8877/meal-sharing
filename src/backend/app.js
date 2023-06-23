@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 const cors = require("cors");
 
 const reservationRouter = require("./api/reservations");
+const reviewRouter = require("./api/reviews");
 
 // For week4 no need to look into this!
 // Serve the built client html
@@ -23,6 +24,7 @@ app.use(cors());
 
 router.use("/meals", mealsRouter);
 router.use("/reservations", reservationRouter);
+router.use("/reviews", reviewRouter);
 
 if (process.env.API_PATH) {
   app.use(process.env.API_PATH, router);
