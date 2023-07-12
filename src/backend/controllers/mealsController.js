@@ -14,7 +14,7 @@ const getAllMeals = async (req, res) => {
         .where("price", "<", maxPrice);
       res.status(200).json(cheapMeals);
 
-    } else if ('availableReservations' in hasQuery) {
+    } if ('availableReservations' in hasQuery) {
       const reservation = hasQuery.availableReservations;
       const freeSpots = await knex("meal")
         .select("title", "max_reservations", knex.raw("SUM(number_of_guests)"))
@@ -32,14 +32,14 @@ const getAllMeals = async (req, res) => {
         ? res.status(200).json(freeSpots)
         : res.status(200).json(noSpots);
 
-    } else if ('title' in hasQuery) {
+    } if ('title' in hasQuery) {
       const match = hasQuery.title;
       const matchMeal = await knex("meal")
         .where("title", "like", `%${match}%`);
         res.status(200).json(matchMeal)
     }
 
-    else if ('dateAfter' in hasQuery) {
+     if ('dateAfter' in hasQuery) {
       const dateAfter = hasQuery.dateAfter;
       console.log(dateAfter)
       const dateAfterMeals = await knex("meal")
@@ -47,7 +47,7 @@ const getAllMeals = async (req, res) => {
         res.status(200).json(dateAfterMeals);
     }
 
-    else if ('dateBefore' in hasQuery) {
+     if ('dateBefore' in hasQuery) {
       const dateBefore = hasQuery.dateBefore;
       console.log(dateBefore)
       const dateBeforeMeals = await knex("meal")
@@ -55,14 +55,14 @@ const getAllMeals = async (req, res) => {
         res.status(200).json(dateBeforeMeals);
     }
 
-    else if ('limit' in hasQuery) {
+     if ('limit' in hasQuery) {
       const limitedNumber = hasQuery.limit;
       const limitedMeals = await knex("meal")
         .limit(limitedNumber);
         res.status(200).json(limitedMeals);
     }
 
-    else if ('sortKey' in hasQuery && !('sortDir' in hasQuery)) {
+     if ('sortKey' in hasQuery && !('sortDir' in hasQuery)) {
       const sortKey = hasQuery.sortKey;
       const sortedMeals = await knex("meal")
         .orderBy(`${sortKey}`, 'asc');
@@ -72,7 +72,7 @@ const getAllMeals = async (req, res) => {
         : res.status(404).json(`not possible to sort by ${sortKey}`)
     }
 
-    else if ('sortKey' in hasQuery && 'sortDir' in hasQuery) {
+     if ('sortKey' in hasQuery && 'sortDir' in hasQuery) {
       const column = hasQuery.sortKey;
       const direction = hasQuery.sortDir;
       const sortedMeals = await knex("meal").
