@@ -5,7 +5,6 @@ const { getAllReservations, addReservation, getReservationById, updateReservatio
 
 router.get("/", async (request, response) => {
   try {
-    // knex syntax for selecting things. Look up the documentation for knex for further info
     const result = await knex("reservation").select(
       "id",
       "number_of_guests",
