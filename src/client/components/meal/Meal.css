@@ -1,0 +1,32 @@
+.meal-container {
+    background-color: #8888;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.meal-info {
+    padding-top: 1rem;
+}
+
+.price-and-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+}
+
+h6 {
+    padding-top: 1rem;
+    margin: 0;
+}
+
