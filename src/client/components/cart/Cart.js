@@ -1,7 +1,7 @@
 import React from "react";
-import "./Meal.css";
+import "./Cart.css";
 
-const Meal = ({title, price}) => {
+const Cart = ({title, price}) => {
   return (
     <div className="meal-container">
       <div className="img-container">
@@ -11,11 +11,11 @@ const Meal = ({title, price}) => {
         <h5>{title}</h5>
         <div className="price-and-btn">
           <h6>Price: {price}</h6>
-          <button className="btn">Buy</button>
+          {/* <button className="btn">More details</button> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default Meal;
+export default Cart;

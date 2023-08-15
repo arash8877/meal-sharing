@@ -6,9 +6,11 @@
 }
 
 #root {
-  padding-left: 30%;
-  padding-right: 30%;
+  /* padding-left: 30%;
+  padding-right: 30%; */
+  width: max(80%);
   height: 100vh;
+  margin-inline: auto;
 }
 
 body {
@@ -43,10 +45,10 @@ button {
 }
 
 @media screen and (max-width: 1400px) {
-  #root {
+  /* #root {
     padding-left: 30%;
     padding-right: 30%;
-  }
+  } */
 }
 
 @media screen and (max-width: 750px) {

@@ -1,6 +1,10 @@
 .meals-container {
   margin: 0;
   padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 
 h1 {
@@ -13,6 +17,14 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+
+  .link-to-details {
+    background-color: #3e99c0;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    color: #ffff;
+    cursor: pointer;
   }
   
 
