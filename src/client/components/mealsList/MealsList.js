@@ -11,7 +11,7 @@ const MealsList = () => {
   console.log(mealsList)
   return (
     <div className="meals-container">
-      <h1>Som of the meals</h1>
+      <h1>Some of the meals</h1>
       <div className="meals-cards">
         {firstThreeMeals.map((meal, index) => (
           <div key={index}>

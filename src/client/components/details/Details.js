@@ -11,7 +11,6 @@ const Details = () => {
 
   const details = mealsList.filter((item) => {
     return String(item.id) === id;
-    console.log(item);
   });
 
   return (
@@ -25,7 +24,7 @@ const Details = () => {
             <h2>{item.title}</h2>
             <h3>price: {item.price}</h3>
             <p>Description: {item.description}</p>
-            <Link to="/book" className="link-to-book">
+            <Link to={`/book/${item.id}`} className="link-to-book">
               Book a seat
             </Link>
           </div>

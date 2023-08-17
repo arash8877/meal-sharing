@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/allmeals/:id">
             <Details />
           </Route>
-          <Route exact path="/book">
+          <Route exact path="/book/:id">
             <ReserveForm />
           </Route>
           <Route exact path="/test-component">
