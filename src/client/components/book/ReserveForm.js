@@ -24,7 +24,7 @@ const ReserveForm = () => {
   const matchedMeal = mealsList.find((item) => item.id === id);
   const mealName = matchedMeal ? matchedMeal.title : null;
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event) => { nmm
     const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
