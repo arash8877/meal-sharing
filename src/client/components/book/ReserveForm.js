@@ -61,10 +61,10 @@ const ReserveForm = () => {
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
-            type="email"
             id="email"
             name="email"
             value={formData.email}
+            type="email"
             onChange={handleInputChange}
             required
           />
