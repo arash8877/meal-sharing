@@ -1,0 +1,59 @@
+.details{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 50px;
+    border: 5px solid rgb(157, 156, 156);
+    border-radius: 10px;
+    margin-top: 5rem;
+  }
+  
+  .details .img-container{
+    max-width: 400px;
+    width: 100%;
+    margin: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .box-details{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* max-width: 500px;
+    width: 100%;
+    margin: 20px; */
+  }
+  
+  .box-details h2{
+    color: blue;
+    letter-spacing: 2px;
+    font-size: 2rem;
+  }
+  .box-details h3{
+    margin: 10px 0;
+  }
+ 
+  
+  .box-details p{
+    line-height: 1.5;
+    margin: 10px 0;
+    opacity: .8;
+  }
+  
+  .link-to-book {
+    background-color: #3e99c0;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    color: #ffff;
+    cursor: pointer;
+    margin-inline: auto;
+  }
+
+  
+  
+  
+  

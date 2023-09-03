@@ -91,7 +91,7 @@ const getAllMeals = async (req, res) => {
 
 
     else {
-      const allMeals = await knex("meal").select("title", "price");
+      const allMeals = await knex("meal").select("id", "title", "price", "description");
       res.status(200).json(allMeals);
     }
 

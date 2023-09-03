@@ -1,0 +1,28 @@
+header{
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  a{
+    color: #555;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  a:hover{
+    color: rgb(87, 212, 243);
+  }
+  
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
